@@ -9,7 +9,8 @@ function WeatherForm({ onSearch }) {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center h-100">
+   <div className="d-flex justify-content-center text-color black align-items-center h-100">
+
       <form onSubmit={handleSubmit}>
         <div className="input-group mb-3">
           <input
