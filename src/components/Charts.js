@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar, AreaChart, Area, ScatterChart, Scatter} from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar, AreaChart, Area, ScatterChart, Scatter } from 'recharts';
 
 function Charts({ weatherData }) {
   if (!weatherData || !weatherData.list || weatherData.list.length === 0) {
@@ -19,15 +19,15 @@ function Charts({ weatherData }) {
   }
 
   return (
-    <div>
-      <h2>Weather Forecast for the Week</h2>
+    <div className="container">
+      <h2 className="text-center mt-5">Weather Forecast for the Week</h2>
 
       {/* Line Chart and Bar Chart */}
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div>
+      <div className="row">
+        <div className="col-md-6 mt-5 p">
           {/* Line Chart */}
           <LineChart
-            width={650}
+            width={600}
             height={300}
             data={dailyWeatherData}
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
@@ -57,10 +57,10 @@ function Charts({ weatherData }) {
             <Line type="monotone" dataKey="temp" stroke="#8884d8" name="Temperature (°C)" />
           </LineChart>
         </div>
-        <div>
+        <div className="col-md-6 mt-5  ">
           {/* Bar Chart */}
           <BarChart
-            width={650}
+            width={600}
             height={300}
             data={dailyWeatherData}
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
@@ -77,11 +77,11 @@ function Charts({ weatherData }) {
       </div>
 
       {/* Area Chart and Scatter Chart */}
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div>
+      <div className="row">
+        <div className="col-md-6 mt-5 pt-5">
           {/* Area Chart */}
           <AreaChart
-            width={650}
+            width={600}
             height={300}
             data={dailyWeatherData}
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
@@ -95,10 +95,10 @@ function Charts({ weatherData }) {
             <Area type="monotone" dataKey="humidity" stroke="#82ca9d" fill="#82ca9d" name="Humidity (%)" />
           </AreaChart>
         </div>
-        <div>
+        <div className="col-md-6 mt-5 pt-5">
           {/* Scatter Chart */}
           <ScatterChart
-            width={650}
+            width={600}
             height={300}
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
           >
@@ -111,13 +111,7 @@ function Charts({ weatherData }) {
           </ScatterChart>
         </div>
       </div>
-
-    
-      
-         
-            <Tooltip />
-      
-        </div>
+    </div>
   );
 }
 

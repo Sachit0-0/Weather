@@ -36,7 +36,7 @@ function Weather({ weatherData, getWeatherIconUrl }) {
           <h3>Date: {currentDate}</h3>
           <h2 className="text-center mt-4 mb-4">Weather for {weatherData.city.name}</h2>
           {/* Display the weather icon */}
-          {weatherIconUrl && <img src={weatherIconUrl} alt="Weather Icon" className="img-fluid mb-3" />}
+          {weatherIconUrl && <img src={weatherIconUrl} alt="Weather Icon" className="img-fluid p-4 m-3" />}
         </div>
         <div className="col-md-6">
           <div className="row">

@@ -30,8 +30,8 @@ function App() {
   };
 
   return (
-    <div className="container mt-5">
-      <h1 className="text-center mt-5">KNOW YOUR WEATHER</h1>
+    <div className="container ">
+      <h1 className="text-center m-4">KNOW YOUR WEATHER</h1>
       <WeatherForm onSearch={fetchWeatherData} />
       <div className="row">
         <div className="">
