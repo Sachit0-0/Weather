@@ -38,23 +38,34 @@ function WeatherForm({ onSearch }) {
   };
   
   return (
+    
     <div className="d-flex justify-content-center text-color black align-items-center h-100">
+      
       <form onSubmit={handleSubmit}>
-        <div className="input-group mb-3">
+        <div className="input-group mb-5">
           <input
             type="text"
-            className="form-control"
-            placeholder="Enter city"
+            className=" fancy text2"
+            placeholder="Enter desired location"
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
           <div className="input-group-append">
-            <button className="btn btn-outline-secondary" type="submit">
-              Search
+   
+            <button className="fancy" type="submit">
+              <span className="top-key"></span>
+              <span className="text">Search</span>
+              <span className="bottom-key-1"></span>
+              <span className="bottom-key-2"></span>
             </button>
-            <button className="btn btn-outline-secondary" type="button" onClick={handleGetCurrentLocation}>
-              Use Current Location
+      
+            <button className="fancy" onClick={handleGetCurrentLocation} type="submit">
+              <span className="top-key"></span>
+              <span className="text">Use Current Location</span>
+              <span className="bottom-key-1"></span>
+              <span className="bottom-key-2"></span>
             </button>
+       
           </div>
         </div>
       </form>

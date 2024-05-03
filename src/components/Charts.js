@@ -50,10 +50,12 @@ function Charts({ weatherData }) {
   }
 
   return (
-    <div className="container">
-      <h2 className="text-center mt-5">Weather Forecast for the Week</h2>
+    <div  className="container mb-5 pb-5">
+      <h2 data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine" className="text-center mt-5">Weather Forecast for the Week</h2>
 
-      <div className="row">
+      <div className="row mb-5">
         <Chart>
           <LineChart
             width={600}

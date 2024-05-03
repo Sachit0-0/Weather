@@ -29,33 +29,33 @@ function Weather({ weatherData, getWeatherIconUrl }) {
   const weatherIconUrl = getWeatherIconUrl(currentWeather.weather[0].icon);
 
   return (
-    <div className="container">
+    <div  data-aos="fade-up"  data-aos-duration="3000"  className="pt-5 container">
  
       <div className="row">
-        <div className="col-md-6">
+        <div className=" p-5 col-md-6">
           <h2> {currentDate}</h2>
           <h2 className="text-center mt-4 mb-4">Weather for {weatherData.city.name}</h2>
           {/* Display the weather icon */}
-          {weatherIconUrl && <img src={weatherIconUrl} alt="Weather Icon" className="img-fluid p-4 m-3" />}
+          {weatherIconUrl && <img src={weatherIconUrl} alt="Weather Icon" className="box img-fluid p-4 m-3" />}
         </div>
         <div className="col-md-6">
           <div className="row">
             <div className="col-sm-4">
-              <div className="card mb-3">
+               <div className="card mb-3 weather-card">
                 <div className="card-body">
                   <p className="card-text"><FontAwesomeIcon icon={faThermometerHalf} /> Temperature: {temperature.toFixed(2)}°C</p>
                 </div>
               </div>
             </div>
             <div className="col-sm-4">
-              <div className="card mb-3">
+               <div className="card mb-3 weather-card">
                 <div className="card-body">
                   <p className="card-text"><FontAwesomeIcon icon={faTint} /> Humidity: {humidity}%</p>
                 </div>
               </div>
             </div>
             <div className="col-sm-4">
-              <div className="card mb-3">
+               <div className="card mb-3 weather-card">
                 <div className="card-body">
                   <p className="card-text"><FontAwesomeIcon icon={faSun} /> Sunrise: {sunrise}</p>
                 </div>
@@ -64,21 +64,21 @@ function Weather({ weatherData, getWeatherIconUrl }) {
           </div>
           <div className="row">
             <div className="col-sm-4">
-              <div className="card mb-3">
+               <div className="card mb-3 weather-card">
                 <div className="card-body">
                   <p className="card-text"><FontAwesomeIcon icon={faMoon} /> Sunset: {sunset}</p>
                 </div>
               </div>
             </div>
             <div className="col-sm-4">
-              <div className="card mb-3">
+               <div className="card mb-3 weather-card">
                 <div className="card-body">
                   <p className="card-text"><FontAwesomeIcon icon={faCompass} /> Pressure: {pressure} hPa</p>
                 </div>
               </div>
             </div>
             <div className="col-sm-4">
-              <div className="card mb-3">
+               <div className="card mb-3 weather-card">
                 <div className="card-body">
                   <p className="card-text"><FontAwesomeIcon icon={faCompass} /> Visibility: {visibility} km</p>
                 </div>
@@ -87,21 +87,21 @@ function Weather({ weatherData, getWeatherIconUrl }) {
           </div>
           <div className="row">
             <div className="col-sm-4">
-              <div className="card mb-3">
+               <div className="card mb-3 weather-card">
                 <div className="card-body">
                   <p className="card-text"><FontAwesomeIcon icon={faWind} /> Wind Speed: {windSpeed} m/s</p>
                 </div>
               </div>
             </div>
             <div className="col-sm-4">
-              <div className="card mb-3">
+               <div className="card mb-3 weather-card">
                 <div className="card-body">
                   <p className="card-text"><FontAwesomeIcon icon={faCloud} /> Cloudiness: {cloudiness}%</p>
                 </div>
               </div>
             </div>
             <div className="col-sm-4">
-              <div className="card mb-3">
+               <div className="card mb-3 weather-card">
                 <div className="card-body">
                   <p className="card-text"><FontAwesomeIcon icon={faCloudRain} /> Rainfall Probability: {rainPossibility}%</p>
                 </div>
@@ -110,7 +110,7 @@ function Weather({ weatherData, getWeatherIconUrl }) {
           </div>
           <div className="row">
             <div className="col-sm-4">
-              <div className="card">
+            <div className="card mb-3 weather-card">
                 <div className="card-body">
                   <p className="card-text"><FontAwesomeIcon icon={faSnowflake} /> Snowfall Probability: {snowPossibility}%</p>
                 </div>

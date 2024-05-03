@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import WeatherForm from './WeatherForm';
 import Weather from './Weather';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Charts from './Charts';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Animation from './Animation';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const fetchWeatherData = async (city) => {
     try {
@@ -24,18 +31,17 @@ function App() {
     }
   };
   
-
   const getWeatherIconUrl = (iconCode) => {
     return `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
   };
 
   return (
-    <div className="container ">
-      <h1 className="text-center m-4">KNOW YOUR WEATHER</h1>
+    <div className="container">
+      <h1 className="text-center mt-5 m-4">KNOW YOUR WEATHER</h1>
       <WeatherForm onSearch={fetchWeatherData} />
       <div className="row">
-        <div className="">
-          {weatherData && (
+        <div className="col">
+          {weatherData ? (
             <>
               <Weather
                 weatherData={weatherData}
@@ -43,6 +49,11 @@ function App() {
               />
               <Charts weatherData={weatherData} />
             </>
+          ) : (
+           <div className=" d-flex justify-content-center align-items-center">
+
+           <Animation/>
+            </div>
           )}
         </div>
       </div>
