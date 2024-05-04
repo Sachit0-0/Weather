@@ -1,28 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Weatherani from '../Weather.gif';
 
 const Animation = () => {
   return (
-    <div className="wrapper">
-    <div className="cloud">
-      <div className="cloud_left"></div>
-      <div className="cloud_right"></div>
+    <div className='pt-5 mt-5'>
+      <img src={Weatherani} alt="Weather Animation" width="500" height="500" />
     </div>
-    <div className="rain">
-      <div className="drop"></div>
-      <div className="drop"></div>
-      <div className="drop"></div>
-      <div className="drop"></div>
-      <div className="drop"></div>
-    </div>
-    <div className="surface">
-      <div className="hit"></div>
-      <div className="hit"></div>
-      <div className="hit"></div>
-      <div className="hit"></div>
-      <div className="hit"></div>
-    </div>
-  </div>
-  )
-}
+  );
+};
 
-export default Animation
+export default Animation;
