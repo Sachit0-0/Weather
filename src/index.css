@@ -24,7 +24,6 @@ body {
 * {
   text-align: center;
   color: #0c0101;
-  overflow-x: hidden; /* Add this line to remove horizontal overflow */
 }
 
 
