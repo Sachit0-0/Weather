@@ -61,7 +61,7 @@ function WeatherForm({ onSearch }) {
       
             <button className="fancy" onClick={handleGetCurrentLocation} type="submit">
               <span className="top-key"></span>
-              <span className="text">Use Current Location</span>
+              <span className="text">Use Device Location</span>
               <span className="bottom-key-1"></span>
               <span className="bottom-key-2"></span>
             </button>
