@@ -9,6 +9,7 @@ import Animation from './Animation';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     AOS.init();
@@ -26,8 +27,10 @@ function App() {
   
       const data = await response.json();
       setWeatherData(data);
+      setError(null);
     } catch (error) {
       console.error(error);
+      setError('Location does not exist. Please try again.');
     }
   };
   
@@ -37,11 +40,13 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="text-center mt-5 m-4">KNOW YOUR WEATHER</h1>
+      <h1 className="text-center mt-5 m-4 display-4">KNOW YOUR WEATHER</h1>
       <WeatherForm onSearch={fetchWeatherData} />
       <div className="row">
         <div className="col">
-          {weatherData ? (
+          {error ? (
+            <div className="alert alert-danger text-center mt-4">{error}</div>
+          ) : weatherData ? (
             <>
               <Weather
                 weatherData={weatherData}
@@ -50,9 +55,8 @@ function App() {
               <Charts weatherData={weatherData} />
             </>
           ) : (
-           <div className=" d-flex justify-content-center align-items-center">
-
-           <Animation/>
+            <div className="d-flex justify-content-center align-items-center h-100">
+              <Animation />
             </div>
           )}
         </div>
@@ -62,3 +66,4 @@ function App() {
 }
 
 export default App;
+

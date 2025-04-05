@@ -21,7 +21,7 @@ function WeatherForm({ onSearch }) {
             }
             const data = await response.json();
             const cityName = data.name || '';
-            onSearch(cityName); // Automatically search for weather data with obtained city name
+            onSearch(cityName); 
           } catch (error) {
             console.error('Error fetching weather data from coordinates:', error);
             alert('Error fetching weather data. Please try again later.');
